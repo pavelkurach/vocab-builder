@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+SUPPORTED_LANGUAGES = ('EN', '__test__')
+
 
 def scrape_oxford_learners_dictionary(word: str) -> list[str]:
     url = lambda i: f'https://www.oxfordlearnersdictionaries.com/definition/english/{word}_{i}'

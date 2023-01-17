@@ -32,3 +32,4 @@ def test_spaced_repetition_scheduler_exceptions():
     with pytest.raises(ValueError):
         SpacedRepetition.spaced_repetition_scheduler(bucket=0, state='SomeNonsense')
 
+

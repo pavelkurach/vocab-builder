@@ -1,4 +1,3 @@
-import unittest
 import pytest
 
 from dict_scrapers import scrape_oxford_learners_dictionary

@@ -10,7 +10,7 @@ from datetime import date, timedelta
 from dict_scrapers import SUPPORTED_LANGUAGES
 
 logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.DEBUG
 )
 logger = logging.getLogger(__name__)
 
@@ -83,20 +83,26 @@ class SpacedRepetition:
 
     @staticmethod
     def _test_revise():
+        """
+        Tests revise() function
+        !!! For some reason I wasn't able to make the test work in test_spaced_repetition.py
+        !!! I always get OperationalError when I try to do anything involving the engine
+        !!! To be analysed later
+        :return:
+        """
         db = SpacedRepetition('__test__')
         for i in range(5):
             db.add_word(word=f'Word{i}', definition=f'Definition{i}')
 
         words_to_revise = db.get_words_to_revise()
         for i, word in enumerate(words_to_revise):
-            logger.info(f'{word.word}')
             assert word.word == f'Word{i}'
             db.revise(word, state='OK')
 
         assert db.get_words_to_revise() == []
         db._clear_database()
         os.remove('data/__test__.db')
-        logger.info('revise() test passed.')
+        logger.debug('revise() test passed.')
 
 
 class Word(Base):

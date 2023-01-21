@@ -1,6 +1,7 @@
 import pytest
 from spaced_repetition import SpacedRepetition
 
+
 states = {'Forgot': SpacedRepetition.states[0],
           'OK': SpacedRepetition.states[1],
           'Recalled easily': SpacedRepetition.states[2]}
@@ -32,4 +33,7 @@ def test_spaced_repetition_scheduler_exceptions():
     with pytest.raises(ValueError):
         SpacedRepetition.spaced_repetition_scheduler(bucket=0, state='SomeNonsense')
 
+
+def test_k():
+    SpacedRepetition._test_revise()
 

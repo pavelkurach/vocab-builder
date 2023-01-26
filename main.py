@@ -8,18 +8,29 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
                            QImage, QKeySequence, QLinearGradient, QPainter,
                            QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMenuBar, QSizePolicy,
-                               QStatusBar, QWidget)
+                               QStatusBar, QWidget, QStackedWidget)
 
 from main_window import Ui_MainWindow
+from add_word_dialog import Ui_add_word_dialog
+
+
+class AddWordDialog(QWidget):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.ui = Ui_add_word_dialog()
+        self.ui.setupUi(self)
 
 
 class MainWindow(QMainWindow):
 
     def __init__(self, parent=None):
-
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.ui.stacked_widget = QStackedWidget()
+        self.ui.add_word_dialog = AddWordDialog()
+        self.ui.stacked_widget.addWidget(self.ui.add_word_dialog)
+        self.ui.main_layout.addWidget(self.ui.stacked_widget)
 
 
 if __name__ == "__main__":

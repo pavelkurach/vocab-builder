@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mainwindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.3.1
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -74,15 +74,6 @@ class Ui_MainWindow(object):
 
         self.main_layout.addWidget(self.languages_menu)
 
-        self.main_window = QWidget(self.centralwidget)
-        self.main_window.setObjectName(u"main_window")
-        self.label = QLabel(self.main_window)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(320, 70, 151, 16))
-        self.label.setStyleSheet(u"color: rgb(0, 0, 0);")
-
-        self.main_layout.addWidget(self.main_window)
-
 
         self.verticalLayout.addLayout(self.main_layout)
 
@@ -106,6 +97,5 @@ class Ui_MainWindow(object):
         self.english_button.setText(QCoreApplication.translate("MainWindow", u"English", None))
         self.french_button.setText(QCoreApplication.translate("MainWindow", u"French", None))
         self.russian_button.setText(QCoreApplication.translate("MainWindow", u"Russian", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Main window", None))
     # retranslateUi
 

@@ -8,10 +8,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
                            QImage, QKeySequence, QLinearGradient, QPainter,
                            QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMenuBar, QSizePolicy,
-                               QStatusBar, QWidget, QStackedWidget)
+                               QStatusBar, QWidget, QStackedWidget, QRadioButton)
 
 from main_window import Ui_MainWindow
 from add_word_dialog import Ui_add_word_dialog
+from dict_scrapers import *
 
 
 class AddWordDialog(QWidget):
@@ -19,6 +20,19 @@ class AddWordDialog(QWidget):
         super().__init__(parent)
         self.ui = Ui_add_word_dialog()
         self.ui.setupUi(self)
+        self.ui.def_options = []
+        self.ui.search_def_btn.clicked.connect(self.search_defs_btn_clicked)
+
+    def search_defs_btn_clicked(self):
+        word = self.ui.word.text()
+        defs = scrape_oxford_learners_dictionary(word=word)
+        for option in self.ui.def_options:
+            option.setParent(None)
+            del option
+        self.ui.def_options = [QRadioButton(text=text) for text in defs]
+        for option in self.ui.def_options:
+            option.setStyleSheet('color: black')
+            self.ui.defs_layout.addWidget(option)
 
 
 class MainWindow(QMainWindow):

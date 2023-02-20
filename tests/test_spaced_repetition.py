@@ -34,6 +34,3 @@ def test_spaced_repetition_scheduler_exceptions():
         SpacedRepetition.spaced_repetition_scheduler(bucket=0, state='SomeNonsense')
 
 
-def test_k():
-    SpacedRepetition._test_revise()
-

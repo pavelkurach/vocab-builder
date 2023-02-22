@@ -1,6 +1,6 @@
 import pytest
 
-from dict_scrapers import scrape_oxford_learners_dictionary
+from src.dict_scrapers import scrape_oxford_learners_dictionary
 
 
 @pytest.mark.parametrize(

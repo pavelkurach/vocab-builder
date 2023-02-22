@@ -6,7 +6,7 @@ from sqlalchemy import create_engine, MetaData, Column, String, Integer, Date
 from sqlalchemy.orm import declarative_base
 from datetime import date, timedelta
 
-from dict_scrapers import SUPPORTED_LANGUAGES
+from src.dict_scrapers import SUPPORTED_LANGUAGES
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",

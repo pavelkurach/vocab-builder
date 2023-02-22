@@ -1,5 +1,5 @@
 import pytest
-from spaced_repetition import SpacedRepetition
+from src.spaced_repetition import SpacedRepetition
 
 
 states = {

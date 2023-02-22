@@ -4,3 +4,4 @@
 /vocab-builder.pyproject.user
 /.mypy_cache/
 /__pycache__/
+/.idea/

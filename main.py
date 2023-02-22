@@ -1,19 +1,17 @@
-# This Python file uses the following encoding: utf-8
 import sys
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-                            QMetaObject, QObject, QPoint, QRect,
-                            QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-                           QFont, QFontDatabase, QGradient, QIcon,
-                           QImage, QKeySequence, QLinearGradient, QPainter,
-                           QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QMainWindow, QMenuBar, QSizePolicy,
-                               QStatusBar, QWidget, QStackedWidget, QRadioButton, QTabWidget,
-                               QLabel)
+from PySide6.QtWidgets import (
+    QApplication,
+    QMainWindow,
+    QSizePolicy,
+    QWidget,
+    QRadioButton,
+    QTabWidget,
+    QLabel,
+)
 
 from main_window import Ui_MainWindow
 from add_word_dialog import Ui_add_word_dialog
-from dict_scrapers import *
+from dict_scrapers import scrape_oxford_learners_dictionary
 
 
 class AddWordDialog(QWidget):
@@ -30,19 +28,22 @@ class AddWordDialog(QWidget):
         for option in self.ui.def_options:
             option.setParent(None)
             del option
-        self.ui.def_options = [QRadioButton(text=text.replace('. ', '.\n')) for text in defs]
+        self.ui.def_options = [
+            QRadioButton(text=text.replace(". ", ".\n")) for text in defs
+        ]
         for option in self.ui.def_options:
             self.ui.defs_layout.addWidget(option)
 
 
 class MainWindow(QMainWindow):
-
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.tab_widget = QTabWidget()
-        self.ui.tab_widget.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.ui.tab_widget.setSizePolicy(
+            QSizePolicy.Expanding, QSizePolicy.Expanding
+        )
         self.ui.add_word_dialog = AddWordDialog()
         self.ui.test_label = QLabel("Test label")
         self.ui.tab_widget.addTab(self.ui.add_word_dialog, "Add new words")

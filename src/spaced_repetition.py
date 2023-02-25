@@ -56,7 +56,7 @@ class SpacedRepetition:
             raise ValueError("Language is incorrect.")
 
         self.language = language
-        self.engine = create_engine(f"sqlite:///data/{language}.db")
+        self.engine = create_engine(f"sqlite:///../data/{language}.db")
         Base.metadata.create_all(bind=self.engine)
 
         self.session = Session(self.engine)
@@ -111,7 +111,7 @@ class SpacedRepetition:
 
         assert db.get_words_to_revise() == []
         db._clear_database()
-        os.remove("data/__test__.db")
+        os.remove("../data/__test__.db")
         logger.debug("revise() test passed.")
 
 

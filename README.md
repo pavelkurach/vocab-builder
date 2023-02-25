@@ -8,4 +8,5 @@ Definitions are scraped from different dictionaries.
 Currently supported languages:
 - English
 
-<img width="798" alt="image" src="https://user-images.githubusercontent.com/101255623/221373794-99302fc3-3779-40fc-a5c9-b53bc3bd5b2f.png">
+<img width="719" alt="image" src="https://user-images.githubusercontent.com/101255623/221374137-6d84cb0e-9c7b-4031-b686-ba4aaf9cafa6.png">
+

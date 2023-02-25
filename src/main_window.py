@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
+
 ###############################################################################
 # Form generated from reading UI file 'mainwindow.ui'
-#
+##
 # Created by: Qt User Interface Compiler version 6.4.2
-#
+##
 # WARNING! All changes made in this file will be lost when recompiling UI file!
 ###############################################################################
 
@@ -17,7 +19,6 @@ from PySide6.QtGui import (
 from PySide6.QtWidgets import (
     QButtonGroup,
     QHBoxLayout,
-    QLabel,
     QLayout,
     QPushButton,
     QSizePolicy,
@@ -27,7 +28,7 @@ from PySide6.QtWidgets import (
 )
 
 
-class Ui_MainWindow:
+class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName("MainWindow")
@@ -61,18 +62,6 @@ class Ui_MainWindow:
         self.menu_layout = QHBoxLayout()
         self.menu_layout.setObjectName("menu_layout")
         self.menu_layout.setSizeConstraint(QLayout.SetNoConstraint)
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName("label_2")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(
-            self.label_2.sizePolicy().hasHeightForWidth()
-        )
-        self.label_2.setSizePolicy(sizePolicy1)
-        self.label_2.setStyleSheet("")
-
-        self.menu_layout.addWidget(self.label_2)
 
         self.verticalLayout.addLayout(self.menu_layout)
 
@@ -81,13 +70,13 @@ class Ui_MainWindow:
         self.main_layout.setSizeConstraint(QLayout.SetNoConstraint)
         self.languages_menu = QWidget(self.centralwidget)
         self.languages_menu.setObjectName("languages_menu")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(
             self.languages_menu.sizePolicy().hasHeightForWidth()
         )
-        self.languages_menu.setSizePolicy(sizePolicy2)
+        self.languages_menu.setSizePolicy(sizePolicy1)
         self.languages_menu.setMaximumSize(QSize(100, 16777215))
         self.languages_menu.setStyleSheet("")
         self.verticalLayout_2 = QVBoxLayout(self.languages_menu)
@@ -146,9 +135,6 @@ class Ui_MainWindow:
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(
             QCoreApplication.translate("MainWindow", "MainWindow", None)
-        )
-        self.label_2.setText(
-            QCoreApplication.translate("MainWindow", "Menu window", None)
         )
         self.english_button.setText(
             QCoreApplication.translate("MainWindow", "English", None)

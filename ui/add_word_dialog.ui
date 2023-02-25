@@ -121,9 +121,7 @@
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">
-
-</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Custom definition </string>
@@ -131,7 +129,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QTextEdit" name="textEdit">
+         <widget class="QTextEdit" name="custom_def">
           <property name="styleSheet">
            <string notr="true">background-color: rgb(40, 40, 40);</string>
           </property>

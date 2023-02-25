@@ -1,10 +1,12 @@
-##############################################################################
+# -*- coding: utf-8 -*-
+
+###############################################################################
 # Form generated from reading UI file 'add_word_dialog.ui'
 #
 # Created by: Qt User Interface Compiler version 6.4.2
 #
 # WARNING! All changes made in this file will be lost when recompiling UI file!
-##############################################################################
+###############################################################################
 
 from PySide6.QtCore import (
     QCoreApplication,
@@ -26,7 +28,7 @@ from PySide6.QtWidgets import (
 )
 
 
-class Ui_add_word_dialog:
+class Ui_add_word_dialog(object):
     def setupUi(self, add_word_dialog):
         if not add_word_dialog.objectName():
             add_word_dialog.setObjectName("add_word_dialog")
@@ -116,11 +118,11 @@ class Ui_add_word_dialog:
 
         self.defs_layout.addWidget(self.custom_def_btn)
 
-        self.textEdit = QTextEdit(self.widget)
-        self.textEdit.setObjectName("textEdit")
-        self.textEdit.setStyleSheet("background-color: rgb(40, 40, 40);")
+        self.custom_def = QTextEdit(self.widget)
+        self.custom_def.setObjectName("custom_def")
+        self.custom_def.setStyleSheet("background-color: rgb(40, 40, 40);")
 
-        self.defs_layout.addWidget(self.textEdit)
+        self.defs_layout.addWidget(self.custom_def)
 
         self.verticalLayout_3.addLayout(self.defs_layout)
 

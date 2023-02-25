@@ -7,3 +7,5 @@ Definitions are scraped from different dictionaries.
 
 Currently supported languages:
 - English
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/101255623/221373735-0461b556-4625-463f-83e9-65823c4aec82.png">

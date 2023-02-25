@@ -1,0 +1,8 @@
+/temp_scraper.ipynb
+/data/
+/vocab-builder.pyproject
+/vocab-builder.pyproject.user
+/.mypy_cache/
+__pycache__/
+*.py[cod]
+
